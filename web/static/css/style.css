@@ -1,0 +1,215 @@
+/* Celotna stran (html + body) naj zasede 100% prostora */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Skrij scrollbars */
+}
+
+/* Glavno okno aplikacije */
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------------------------- */
+/* ZGORNJI DEL - naslov (5% višine) */
+/* ---------------------------------- */
+.top_container {
+  position: absolute;
+  top: 1vh;
+  left: 1vh;
+  right: 1vh;
+  height: 4vh; /* Višina zgornjega dela */
+}
+
+/* Naslovna vrstica */
+.header-bar {
+  width: 100%;
+  height: 100%;
+  background-color: lightgray;
+  border: 1px solid black;
+}
+
+/* ---------------------------------- */
+/* SREDNJI DEL (50% višine) */
+/* ---------------------------------- */
+.mid_container {
+  position: absolute;
+  top: 6vh;  /* Takoj pod zgornjim delom */
+  left: 1vh;
+  right: 1vh;
+  height: 47vh;  /* Srednji del (50% okna) */
+  display: flex; /* Levi in desni del */
+  overflow-y: auto; /* Če je vsebina prevelika, omogoči scroll */
+}
+
+/* Levi del (gumbi in rezultati) */
+.left-block {
+  display: flex;
+  flex-direction: column;
+  width: 77%; /* Levi del zasede večino prostora */
+}
+
+/* Container za izbire */
+.selection-container {
+  flex: 0 0 auto; /* Naj ostane fiksna višina */
+}
+
+/* Container za rezultate */
+.result-container {
+  flex: 0 0 auto; /* Prav tako fiksna višina */
+}
+
+/* Desni del (detektor) */
+.ml_detector {
+  width: 23%;
+  min-height: 100%; 
+  background-color: #eee;
+  border: 1px solid #000;
+}
+
+/* ---------------------------------- */
+/* SPODNJI DEL (45% višine) */
+/* ---------------------------------- */
+.bottom_container {
+  position: absolute;
+  bottom: 1vh;
+  left: 1vh;
+  right: 1vh;
+  height: 45vh; /* Preostanek okna */
+  border: 1px solid black;
+  background-color: white;
+  display: flex;
+}
+
+/* Notranji pravokotniki */
+.main-rectangle {
+  flex: 1;       
+  display: flex;
+}
+
+/* Manjši pravokotniki */
+.rectangle {
+  height: 100%;
+}
+
+/* Sivi pravokotniki */
+.gray {
+  width: 10%;
+  background-color: lightgray;
+  border: 1px solid black;
+}
+
+/* Beli pravokotniki */
+.white {
+  width: 40%;
+  background-color: white;
+  border: 1px solid black;
+}
+
+/* ---------------------------------- */
+/* Gumbi in pickerji */
+/* ---------------------------------- */
+.picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1vh;
+}
+
+.picker button {
+  padding: 0.5vh 0.4vh;
+  margin: 0.3vh 0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.picker button:hover {
+  background-color: #f0f0f0;
+}
+
+.picker button.selected {
+  border: 2px solid black;
+}
+
+/* Rezultat */
+.result-box {
+  font-size: 16px;
+  color: #333;
+  padding: 5px 10px;
+  margin: 1vh 0;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+/* ---------------------------------- */
+/* Gumbi v pravokotnikih */
+/* ---------------------------------- */
+.rect-buttons {
+  display: flex;
+  flex-direction: column;
+  margin: 0.1vh;
+}
+
+.rect-buttons button {
+  padding: 0.2vh 1vh;
+  margin: 0.1vh;
+  border: 1px solid #666;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.rect-buttons button:hover {
+  background-color: #e0e0e0;
+}
+
+.rect-buttons button.selected {
+  background-color: #90caf9;
+  border: 1px solid #444;
+}
+
+/* ---------------------------------- */
+/* ML Detector */
+/* ---------------------------------- */
+.ml_detector {
+  width: 23%;
+  min-height: 100%; 
+  background-color: #eee;
+  border: 1px solid #000;
+  padding: 1vh;
+  overflow-y: auto; /* Scroll, če je preveč podatkov */
+}
+
+/* Naslov ML Detector */
+.ml_detector h4 {
+  margin: 0;
+  padding-bottom: 1vh;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Gumbi v ML Detector */
+.ml_date_button {
+  width: 100%;
+  padding: 0.5vh 1vh;
+  margin-bottom: 0.5vh;
+  font-size: 1em;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #666;
+  background-color: white;
+}
+
+.ml_date_button:hover {
+  background-color: #e0e0e0;
+}
+
+.ml_date_button.selected {
+  background-color: #90caf9;
+  border: 2px solid black;
+}
